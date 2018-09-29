@@ -1,1 +1,1 @@
-web : node botTelegramm.js
+web : npm start
