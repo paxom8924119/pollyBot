@@ -17,7 +17,12 @@ var api = new telegram({
     enabled: true
   },
 });
+api.on('message', (msg) => {
+  const chatId = msg.chat.id;
 
+  // send a message to the chat acknowledging receipt of their message
+  api.sendMessage(chatId, 'Received your message');
+});
 
 fs.readFile("hello.txt", "utf8",
   function (error, data) {
